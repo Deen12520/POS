@@ -1,0 +1,56 @@
+unit C_POS_TH;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, DBAccess, Uni, MemDS, Grids, DBGrids;
+
+type
+  TW_POS_THForm = class(TForm)
+    lblJYDH: TLabel;
+    lblComm_Id: TLabel;
+    lblSYY: TLabel;
+    lblCash_Id: TLabel;
+    lblJYSJ: TLabel;
+    lblTradeTime: TLabel;
+    dbgrdProDetaill: TDBGrid;
+    unqryRetrn_Detail: TUniQuery;
+    intgrfldRetrn_DetailField: TIntegerField;
+    strngfldRetrn_Detailstore_id: TStringField;
+    dtmfldRetrn_Detailtrade_time: TDateTimeField;
+    strngfldRetrn_Detailtrade_turnover_num: TStringField;
+    strngfldRetrn_Detailsale_pos_id: TStringField;
+    fltfldRetrn_Detailsale_real_total: TFloatField;
+    strngfldRetrn_Detailauthor_code: TStringField;
+    strngfldRetrn_Detailstatus: TStringField;
+    intgrfldRetrn_Detailadd_point: TIntegerField;
+    strngfldRetrn_Detailcashier_id: TStringField;
+    strngfldRetrn_Detailtran_seri_num: TStringField;
+    strngfldRetrn_Detailcommodity_id: TStringField;
+    fltfldRetrn_Detailprice_onsale: TFloatField;
+    fltfldRetrn_Detailsale_price: TFloatField;
+    fltfldRetrn_Detailprice_cost: TFloatField;
+    fltfldRetrn_Detailsale_count: TFloatField;
+    fltfldRetrn_Detailprom_count: TFloatField;
+    fltfldRetrn_Detailprom_price: TFloatField;
+    fltfldRetrn_Detailsale_total: TFloatField;
+    intgrfldRetrn_Detailmem_point: TIntegerField;
+    strngfldRetrn_Detailcommodity_name: TStringField;
+    dsFinProRetrn_Detail: TUniDataSource;
+    btnYes: TButton;
+    btnNo: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  W_POS_THForm: TW_POS_THForm;
+
+implementation
+
+{$R *.dfm}
+
+end.

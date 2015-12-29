@@ -1,0 +1,163 @@
+object W_POS_guadanForm: TW_POS_guadanForm
+  Left = 260
+  Top = 157
+  Width = 842
+  Height = 474
+  Caption = #25346#21333
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 16
+    Top = 16
+    Width = 777
+    Height = 409
+    TabOrder = 1
+    object dbgrdguadan: TDBGrid
+      Left = 232
+      Top = 16
+      Width = 537
+      Height = 337
+      DataSource = dsguadan
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = #24207#21495
+          Width = 48
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'commodity_id'
+          Width = 99
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'commodity_name'
+          Width = 172
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'sale_price'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'sale_count'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'sale_total'
+          Visible = True
+        end>
+    end
+    object btndel: TBitBtn
+      Left = 366
+      Top = 361
+      Width = 97
+      Height = 33
+      Caption = #21024#38500'(D)'
+      TabOrder = 1
+      OnClick = btndelClick
+    end
+    object btnenter: TBitBtn
+      Left = 472
+      Top = 360
+      Width = 97
+      Height = 33
+      Caption = #30830#23450'(Enter)'
+      TabOrder = 2
+      OnClick = btnenterClick
+    end
+    object btnquit: TBitBtn
+      Left = 576
+      Top = 360
+      Width = 97
+      Height = 33
+      Cancel = True
+      Caption = #36864#20986'(ESC)'
+      TabOrder = 3
+      OnClick = btnquitClick
+    end
+  end
+  object lvguadan: TListView
+    Left = 32
+    Top = 32
+    Width = 209
+    Height = 337
+    Columns = <>
+    RowSelect = True
+    TabOrder = 0
+    ViewStyle = vsReport
+    OnSelectItem = lvguadanSelectItem
+  end
+  object uniqueryguadan: TUniQuery
+    Connection = DM_ZB_Common.VG_ZB_ADOConnection
+    SQL.Strings = (
+      'select * from t_bi_saledeal,t_bi_saledealdetail;')
+    Left = 792
+    Top = 16
+    object intgrfldXH: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = #24207#21495
+      OnGetText = intgrfldXHGetText
+      Calculated = True
+    end
+    object strngfld_id: TStringField
+      DisplayLabel = #21830#21697#32534#21495
+      FieldName = 'commodity_id'
+      ReadOnly = True
+    end
+    object strngfld_name: TStringField
+      DisplayLabel = #21830#21697#21517#31216#13#10
+      FieldName = 'commodity_name'
+      ReadOnly = True
+      Size = 50
+    end
+    object fltfld_price: TFloatField
+      DisplayLabel = #21806#20215#13#10
+      FieldName = 'sale_price'
+      ReadOnly = True
+    end
+    object fltfld_count: TFloatField
+      DisplayLabel = #25968#37327
+      FieldName = 'sale_count'
+      ReadOnly = True
+    end
+    object fltfld_total: TFloatField
+      DisplayLabel = #23567#35745#37329#39069
+      FieldName = 'sale_total'
+      ReadOnly = True
+    end
+  end
+  object dsguadan: TUniDataSource
+    DataSet = uniqueryguadan
+    Left = 792
+    Top = 48
+  end
+  object uniqueryGD2: TUniQuery
+    Connection = DM_ZB_Common.VG_ZB_ADOConnection
+    SQL.Strings = (
+      'select * from t_bi_saledeal,t_bi_saledealdetail;')
+    Left = 792
+    Top = 88
+  end
+end

@@ -1,0 +1,118 @@
+object W_POS_YJiaForm: TW_POS_YJiaForm
+  Left = 2
+  Top = 275
+  Width = 463
+  Height = 295
+  Caption = #35758#20215
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 8
+    Top = 8
+    Width = 417
+    Height = 241
+    Caption = 'pnl1'
+    TabOrder = 0
+    object lbl1: TLabel
+      Left = 32
+      Top = 24
+      Width = 137
+      Height = 33
+      AutoSize = False
+      Caption = #24212'         '#25910#65306
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbl2: TLabel
+      Left = 24
+      Top = 104
+      Width = 161
+      Height = 29
+      AutoSize = False
+      Caption = #35758#20215#21518#24212#25910#65306
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbl3: TLabel
+      Left = 8
+      Top = 216
+      Width = 60
+      Height = 13
+      Caption = #25552#31034#20449#24687#65306
+    end
+    object lbl4: TLabel
+      Left = 80
+      Top = 216
+      Width = 16
+      Height = 13
+      Caption = 'lbl4'
+    end
+    object edtYS: TEdit
+      Left = 191
+      Top = 20
+      Width = 209
+      Height = 45
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      Text = 'edtYS'
+    end
+    object edtYJ: TEdit
+      Left = 191
+      Top = 96
+      Width = 209
+      Height = 45
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = 'edtYJ'
+      OnKeyPress = edtYJKeyPress
+    end
+    object btn1: TBitBtn
+      Left = 87
+      Top = 164
+      Width = 102
+      Height = 36
+      Caption = #30830#23450'(Enter)'
+      Default = True
+      TabOrder = 2
+      OnClick = btn1Click
+    end
+    object btn2: TBitBtn
+      Left = 247
+      Top = 162
+      Width = 104
+      Height = 38
+      Cancel = True
+      Caption = #36864#20986'(ESC)'
+      TabOrder = 3
+      OnClick = btn2Click
+    end
+  end
+end

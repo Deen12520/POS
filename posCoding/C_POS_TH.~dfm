@@ -1,0 +1,233 @@
+object W_POS_THForm: TW_POS_THForm
+  Left = 578
+  Top = 245
+  Width = 670
+  Height = 413
+  Caption = #36864#36135
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblJYDH: TLabel
+    Left = 24
+    Top = 40
+    Width = 65
+    Height = 13
+    AutoSize = False
+    Caption = #20132#26131#21333#21495#65306
+  end
+  object lblComm_Id: TLabel
+    Left = 96
+    Top = 40
+    Width = 129
+    Height = 13
+    AutoSize = False
+    Caption = 'lblComm_Id'
+  end
+  object lblSYY: TLabel
+    Left = 256
+    Top = 40
+    Width = 49
+    Height = 13
+    AutoSize = False
+    Caption = #25910#38134#21592#65306
+  end
+  object lblCash_Id: TLabel
+    Left = 312
+    Top = 40
+    Width = 65
+    Height = 13
+    AutoSize = False
+    Caption = 'lblCash_Id'
+  end
+  object lblJYSJ: TLabel
+    Left = 408
+    Top = 40
+    Width = 65
+    Height = 13
+    AutoSize = False
+    Caption = #20132#26131#26102#38388#65306
+  end
+  object lblTradeTime: TLabel
+    Left = 480
+    Top = 40
+    Width = 129
+    Height = 13
+    AutoSize = False
+    Caption = 'lblTradeTime'
+  end
+  object dbgrdProDetaill: TDBGrid
+    Left = 32
+    Top = 88
+    Width = 545
+    Height = 153
+    DataSource = dsFinProRetrn_Detail
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgMultiSelect]
+    ParentShowHint = False
+    ReadOnly = True
+    ShowHint = False
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = #34892#21495
+        Width = 33
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'commodity_id'
+        Width = 131
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'commodity_name'
+        Width = 125
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sale_price'
+        Width = 82
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sale_count'
+        Width = 62
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sale_total'
+        Width = 67
+        Visible = True
+      end>
+  end
+  object btnYes: TButton
+    Left = 120
+    Top = 280
+    Width = 89
+    Height = 25
+    Caption = #30830#35748#65288'Y'#65289
+    TabOrder = 1
+  end
+  object btnNo: TButton
+    Left = 360
+    Top = 280
+    Width = 89
+    Height = 25
+    Caption = #21462#28040#65288'N'#65289
+    TabOrder = 2
+  end
+  object unqryRetrn_Detail: TUniQuery
+    Connection = DM_ZB_Common.VG_ZB_ADOConnection
+    SQL.Strings = (
+      'select * from t_bi_saledeal,t_bi_saledealdetail;')
+    Left = 600
+    Top = 56
+    object intgrfldRetrn_DetailField: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = #34892#21495
+      Calculated = True
+    end
+    object strngfldRetrn_Detailstore_id: TStringField
+      FieldName = 'store_id'
+      Size = 9
+    end
+    object dtmfldRetrn_Detailtrade_time: TDateTimeField
+      FieldName = 'trade_time'
+    end
+    object strngfldRetrn_Detailtrade_turnover_num: TStringField
+      FieldName = 'trade_turnover_num'
+    end
+    object strngfldRetrn_Detailsale_pos_id: TStringField
+      FieldName = 'sale_pos_id'
+      Size = 2
+    end
+    object fltfldRetrn_Detailsale_real_total: TFloatField
+      FieldName = 'sale_real_total'
+    end
+    object strngfldRetrn_Detailauthor_code: TStringField
+      FieldName = 'author_code'
+    end
+    object strngfldRetrn_Detailstatus: TStringField
+      FieldName = 'status'
+      FixedChar = True
+      Size = 1
+    end
+    object intgrfldRetrn_Detailadd_point: TIntegerField
+      FieldName = 'add_point'
+    end
+    object strngfldRetrn_Detailcashier_id: TStringField
+      FieldName = 'cashier_id'
+      Size = 4
+    end
+    object strngfldRetrn_Detailtran_seri_num: TStringField
+      FieldName = 'tran_seri_num'
+      ReadOnly = True
+    end
+    object strngfldRetrn_Detailcommodity_id: TStringField
+      DisplayLabel = #21830#21697#32534#30721
+      FieldName = 'commodity_id'
+      ReadOnly = True
+    end
+    object fltfldRetrn_Detailprice_onsale: TFloatField
+      FieldName = 'price_onsale'
+      ReadOnly = True
+    end
+    object fltfldRetrn_Detailsale_price: TFloatField
+      DisplayLabel = #21806#20215
+      FieldName = 'sale_price'
+      ReadOnly = True
+    end
+    object fltfldRetrn_Detailprice_cost: TFloatField
+      FieldName = 'price_cost'
+      ReadOnly = True
+    end
+    object fltfldRetrn_Detailsale_count: TFloatField
+      DisplayLabel = #25968#37327
+      FieldName = 'sale_count'
+      ReadOnly = True
+    end
+    object fltfldRetrn_Detailprom_count: TFloatField
+      FieldName = 'prom_count'
+      ReadOnly = True
+    end
+    object fltfldRetrn_Detailprom_price: TFloatField
+      FieldName = 'prom_price'
+      ReadOnly = True
+    end
+    object fltfldRetrn_Detailsale_total: TFloatField
+      DisplayLabel = #23567#35745
+      FieldName = 'sale_total'
+      ReadOnly = True
+    end
+    object intgrfldRetrn_Detailmem_point: TIntegerField
+      FieldName = 'mem_point'
+      ReadOnly = True
+    end
+    object strngfldRetrn_Detailcommodity_name: TStringField
+      DisplayLabel = #21830#21697#21517#31216
+      FieldName = 'commodity_name'
+      ReadOnly = True
+      Size = 50
+    end
+  end
+  object dsFinProRetrn_Detail: TUniDataSource
+    DataSet = unqryRetrn_Detail
+    Left = 600
+    Top = 104
+  end
+end
